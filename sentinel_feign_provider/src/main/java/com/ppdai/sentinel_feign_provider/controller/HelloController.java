@@ -1,8 +1,6 @@
 package com.ppdai.sentinel_feign_provider.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author hxt
@@ -13,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1")
 public class HelloController {
 
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello World!";
+    @GetMapping("/hello/{hello}")
+    public String hello(@PathVariable String hello) {
+        return hello;
     }
 }
